@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const StyledLogin = styled.div`
     display: flex;
@@ -25,6 +26,8 @@ const initialState = {
 }
 
 const Login = () => {
+
+    const navigate = useNavigate();
     
     const [form, setForm ] = useState(initialState)
 
@@ -60,8 +63,8 @@ const Login = () => {
                     />
                 </label>
                 <button>Submit</button>
-                <button>Sign Up</button>
             </form>
+            <button onClick={() => navigate('/register')} >Sign Up</button>
         </StyledLogin>
     )
 }
