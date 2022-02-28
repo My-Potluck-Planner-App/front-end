@@ -4,10 +4,12 @@ import styled from "styled-components";
 const StyledPotluckForm = styled.div`
 
 
-    form{
+    .potluckForm{
         display: flex;
         flex-direction: column;
     }
+
+
 `
 
 const initialState = {
@@ -15,7 +17,6 @@ const initialState = {
     location: '',
     date: '',
     time: '',
-    itemBeingAdded: '',
     numberAttending: 0,
     listOfAttendees: [],
     itemsNeeded: [],
@@ -54,7 +55,7 @@ const PotluckForm = props => {
     return(
         <StyledPotluckForm>
             <h1>New Potluck</h1>
-            <form className="portluckForm" onSubmit={handleSubmit}>
+            <form className="potluckForm" onSubmit={handleSubmit}>
                 <label>Event name:
                     <input 
                         type='input'
@@ -85,6 +86,11 @@ const PotluckForm = props => {
                         onChange={handleChange}
                     />
                 </label>
+
+                <div>
+                    <h3>Items to bring:</h3>
+                    
+                </div>
 
                 <button>Submit</button>
             </form>

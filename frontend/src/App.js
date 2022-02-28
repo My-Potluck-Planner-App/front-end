@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Header from './components/Header';
 import Potlucks from './components/Potlucks';
 import PotluckForm from './components/PotluckForm';
+import Register from './components/Register';
 import styled from 'styled-components';
 import './App.css';
 import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
@@ -15,8 +16,14 @@ const StyledApp = styled.div`
 
 function App() {
 
-  const [ potlucks, setPotlucks ] = useState([])
+  // Alot of this is temporary until we get a backend setup.
 
+  //All state slices go here
+  const [ potlucks, setPotlucks ] = useState([])
+  const [ users, setUsers ] = useState([])
+
+
+  //Helper functions go here
   const login = () => {
 
   }
@@ -36,6 +43,12 @@ function App() {
 
   }
 
+  const addNewUser = () => {
+
+  }
+
+
+  
   return (
     <StyledApp>
       <Header />
@@ -43,6 +56,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/potlucks' element={<Potlucks />} />
         <Route path='/newPotluck' element={<PotluckForm addPotluck={addPotluck}/>} /> 
+        <Route path='/register' element={<Register />} />
       </Routes>
     </StyledApp>
   );
