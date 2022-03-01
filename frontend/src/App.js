@@ -54,7 +54,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/potlucks' element={<Potlucks />} />
+        <Route path='/potlucks' element={<Potlucks potlucks={potlucks}/>} />
         <Route path='/newPotluck' element={<PotluckForm addPotluck={addPotluck}/>} /> 
         <Route path='/register' element={<Register />} />
       </Routes>

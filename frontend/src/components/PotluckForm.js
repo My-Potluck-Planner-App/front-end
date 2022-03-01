@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledPotluckForm = styled.div`
-
-
     .potluckForm{
         display: flex;
         flex-direction: column;
     }
-
-
 `
 
 const initialState = {
@@ -39,11 +35,30 @@ const PotluckForm = props => {
     const { addPotluck } = props;
 
     const [ form, setForm ] = useState(initialState)
+    const [ newItem, setNewItem ] = useState({
+        itemToAdd: ''
+    })
 
     const handleChange = e => {
+
+        if(e.target.name === 'itemToAdd'){
+            setNewItem({
+                ...newItem,
+                [e.target.name]: e.target.value
+            })
+        }else{
+            setForm({
+                ...form,
+                [e.target.name]: e.target.value
+            })
+        }
+    }
+    
+    const addItem = e => {
+        e.preventDefault();
         setForm({
             ...form,
-            [e.target.name]: e.target.value
+            itemsNeeded: [ ...form.itemsNeeded, newItem]
         })
     }
 
@@ -87,9 +102,17 @@ const PotluckForm = props => {
                     />
                 </label>
 
-                <div>
+                <div className="addItemSection">
                     <h3>Items to bring:</h3>
-                    
+                    {form.itemsNeeded.length > 0 ? (form.itemsNeeded.map(item => {
+                        return <div>{item.itemToAdd}</div>
+                    })) : ''}
+                    <input 
+                        type='input'
+                        name='itemToAdd'
+                        onChange={handleChange}
+                    />
+                    <button onClick={addItem}>Add Item</button>
                 </div>
 
                 <button>Submit</button>
