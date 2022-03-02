@@ -17,7 +17,7 @@ const StyledApp = styled.div`
 
 function App() {
 
-  // Alot of this is temporary until we get a backend setup.
+  // Alot of this is temporary until we get a backend setup..
 
   //All state slices go here
   const [ potlucks, setPotlucks ] = useState(dummyData)
