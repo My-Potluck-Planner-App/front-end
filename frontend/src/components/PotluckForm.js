@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const StyledPotluckForm = styled.div`
     .potluckForm{
@@ -32,6 +33,8 @@ const PotluckForm = props => {
     -allItems
     -itemsNeeded
 */
+    const navigate = useNavigate();
+
     const { addPotluck } = props;
 
     const [ form, setForm ] = useState(initialState)
@@ -65,6 +68,7 @@ const PotluckForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         addPotluck(form);
+        navigate('/potlucks');
     }
 
     return(

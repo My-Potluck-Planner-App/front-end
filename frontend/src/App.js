@@ -7,6 +7,7 @@ import Register from './components/Register';
 import styled from 'styled-components';
 import './App.css';
 import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
+import dummyData from './dummyData/dummypotlucks.js';
 
 const StyledApp = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ function App() {
   // Alot of this is temporary until we get a backend setup.
 
   //All state slices go here
-  const [ potlucks, setPotlucks ] = useState([])
+  const [ potlucks, setPotlucks ] = useState(dummyData)
   const [ users, setUsers ] = useState([])
 
 

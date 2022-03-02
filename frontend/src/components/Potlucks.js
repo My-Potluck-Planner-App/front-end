@@ -3,7 +3,18 @@ import styled from "styled-components";
 import PotLuck from "./Potluck";
 
 const StyledPotlucks = styled.div`
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
 
+    .potluckDetails{
+        border: red solid 1px;
+        width: calc(50% - 2px);
+        margin: 20px 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .details{
         display: flex;
@@ -31,6 +42,7 @@ const Potlucks = props => {
                                 <span>Time: {potluck.time}</span>
                                 <span>Location: {potluck.location}</span>
                             </div>
+                            <button>View Event</button>
                         </div>
                     )
                 })
