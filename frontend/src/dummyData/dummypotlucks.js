@@ -1,6 +1,7 @@
 
 const potlucks = [
     {
+        id: 0,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',
@@ -11,6 +12,7 @@ const potlucks = [
         itemsClaimed: [] //These are items that someone has already agreed to bring
     },
     {
+        id: 1,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',
@@ -21,6 +23,7 @@ const potlucks = [
         itemsClaimed: [] //These are items that someone has already agreed to bring
     },
     {
+        id: 2,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',
@@ -31,6 +34,7 @@ const potlucks = [
         itemsClaimed: [] //These are items that someone has already agreed to bring
     },
     {
+        id: 3,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',
@@ -41,6 +45,7 @@ const potlucks = [
         itemsClaimed: [] //These are items that someone has already agreed to bring
     },
     {
+        id: 4,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',
@@ -51,6 +56,7 @@ const potlucks = [
         itemsClaimed: [] //These are items that someone has already agreed to bring
     },
     {
+        id: 5,
         name: 'Picnic at the park',
         location: 'Cherry Creek Park',
         date: '02-28-2022',

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import PotLuck from "./Potluck";
 
 const StyledPotlucks = styled.div`
@@ -24,6 +25,8 @@ const StyledPotlucks = styled.div`
 
 const Potlucks = props => {
 
+    const navigate = useNavigate();
+
     const { potlucks } = props;
 
     console.log('Porlucks props: ', props)
@@ -42,7 +45,9 @@ const Potlucks = props => {
                                 <span>Time: {potluck.time}</span>
                                 <span>Location: {potluck.location}</span>
                             </div>
-                            <button>View Event</button>
+                            <button onClick={() => {
+                                navigate(`/potluck/${potluck.id}`)
+                            }}>View Event</button>
                         </div>
                     )
                 })

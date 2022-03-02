@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Login from './components/Login';
 import Header from './components/Header';
 import Potlucks from './components/Potlucks';
+import Potluck from './components/Potluck';
 import PotluckForm from './components/PotluckForm';
 import Register from './components/Register';
 import styled from 'styled-components';
@@ -56,8 +57,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/potlucks' element={<Potlucks potlucks={potlucks}/>} />
-        <Route path='/newPotluck' element={<PotluckForm addPotluck={addPotluck}/>} /> 
+        <Route path='/newPotluck' element={<PotluckForm addPotluck={addPotluck} potlucks={potlucks}/>} /> 
         <Route path='/register' element={<Register />} />
+        <Route path='/potluck/:id' element={<Potluck potlucks={potlucks}/>} />
       </Routes>
     </StyledApp>
   );

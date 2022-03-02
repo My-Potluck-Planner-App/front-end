@@ -10,6 +10,7 @@ const StyledPotluckForm = styled.div`
 `
 
 const initialState = {
+    id: null,
     name: '',
     location: '',
     date: '',
@@ -21,7 +22,9 @@ const initialState = {
 }
 
 const PotluckForm = props => {
+    const id = props.potlucks.length;
 
+    console.log('id: ', id);
 /*
     List of thins a potluck needs
     -name(name of event)
@@ -67,7 +70,11 @@ const PotluckForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        addPotluck(form);
+        addPotluck({
+            ...form,
+            id: id
+        })
+        // addPotluck(form);
         navigate('/potlucks');
     }
 
