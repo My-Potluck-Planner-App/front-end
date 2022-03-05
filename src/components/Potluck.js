@@ -22,17 +22,13 @@ const StyledPotluck = styled.div`
 const PotLuck = props => {
 
     const { id } = useParams();
-    // console.log('id: ', id);
 
     const { potlucks } = props;
 
-    // console.log('potlucks: ', potlucks);
-
     const potluck = potlucks.find(item => {
-        return item.id == id;
+        
+        return item.id === parseInt(id);
     })
-
-    console.log('potluck: ', potluck);
 
     
     return(

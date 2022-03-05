@@ -17,8 +17,10 @@ const initialState = {
     username: ''
 }
 
-const Register = () => {
+const Register = props => {
     
+    const { addNewUser } = props;
+
     const [form, setForm ] = useState(initialState)
 
     const handleChange = e => {
@@ -30,6 +32,7 @@ const Register = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        addNewUser(form);
     }
 
     return(

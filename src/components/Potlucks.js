@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import PotLuck from "./Potluck";
 
 const StyledPotlucks = styled.div`
     display: flex;
@@ -28,8 +27,6 @@ const Potlucks = props => {
     const navigate = useNavigate();
 
     const { potlucks } = props;
-
-    console.log('Porlucks props: ', props)
 
     return(
         <StyledPotlucks>

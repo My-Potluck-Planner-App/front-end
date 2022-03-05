@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const StyledLogin = styled.div`
     display: flex;
@@ -25,7 +25,9 @@ const initialState = {
     password: ''
 }
 
-const Login = () => {
+const Login = props => {
+
+    const { login } = props;
 
     const navigate = useNavigate();
     
@@ -40,6 +42,7 @@ const Login = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        login(form);
     }
 
     return(

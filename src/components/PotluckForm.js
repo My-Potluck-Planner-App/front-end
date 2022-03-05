@@ -24,7 +24,6 @@ const initialState = {
 const PotluckForm = props => {
     const id = props.potlucks.length;
 
-    console.log('id: ', id);
 /*
     List of thins a potluck needs
     -name(name of event)

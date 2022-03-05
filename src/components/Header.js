@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import icon from '../images/potluck.jpg';
-import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const StyledHeader = styled.div`
     display: flex;
@@ -20,7 +20,9 @@ const StyledHeader = styled.div`
 `
 
 
-const Header = () => {
+const Header = props => {
+
+    const {logout} = props;
 
     return(
         <StyledHeader>
@@ -29,7 +31,9 @@ const Header = () => {
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/potlucks'>Potlucks</NavLink>
                 <NavLink to='/newPotluck'>Create Potluck</NavLink>
-                <button>Logout</button>
+                <button onClick={() => {
+                    logout();
+                }}>Logout</button>
             </div>
         </StyledHeader>
     )
